@@ -1,0 +1,39 @@
+<div id="component">
+  <div id="pagetitle">
+    <span>{{ pagetitle }}</span> |
+    <a routerLink='/vendors/create'>Create New</a>
+  </div>
+  <div id="content">
+    <table class="table table-sm table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th>Id</th>
+          <th>Vendor Code</th>
+          <th>Name</th>
+          <th>Address</th>          
+          <th>Phone</th>
+          <th>Email</th>
+          <th>Pre Approved</th>
+          <th>Active</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let v of vendors'>
+          <td>{{v.Id}}</td>
+          <td>{{v.Code}}</td>
+          <td>{{v.Name}}</td>
+          <td>{{v.Address}} {{v.City}}, {{v.State}} {{v.Zip}}</td>         
+          <td>{{v.Phone}}</td>
+          <td>{{v.Email}}</td>
+          <td>{{v.IsPreApproved ? 'Yes' : ''}}</td>
+          <td>{{v.Active ? 'Yes' : ''}}</td>
+          <td>
+            <a routerLink='/vendors/detail/{{v.Id}}'>detail</a> |
+            <a routerLink='/vendors/edit/{{v.Id}}'>edit</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

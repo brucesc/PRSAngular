@@ -1,0 +1,51 @@
+<div id="component">
+  <div id="pagetitle">
+    <span>{{ pagetitle }}</span>
+  </div>
+  <div id="content" *ngIf='purchaseRequest'>
+    <table class="table table-sm">
+      <tr>
+        <th>Id</th>
+        <td>{{purchaseRequest.Id}}</td>
+      </tr>
+      <tr>
+        <th>User</th>
+        <td>{{purchaseRequest.User.UserName}}</td>
+      </tr>
+      <tr>
+        <th>Description</th>
+        <td>{{purchaseRequest.Description}}</td>
+      </tr>
+      <tr>
+        <th>Justification</th>
+        <td>{{purchaseRequest.Justification}}</td>
+      </tr>
+      <tr>
+        <th>Date Needed</th>
+        <td>{{purchaseRequest.DateNeeded}}</td>
+      </tr>
+      <tr>
+        <th>Delivery Mode</th>
+        <td>{{purchaseRequest.DeliveryMode}}</td>
+      </tr>
+      <tr>
+        <th>Status</th>
+        <td>{{purchaseRequest.Status}}</td>
+      </tr>
+      <tr>
+        <th>Total</th>
+        <td>{{purchaseRequest.Total | currency}}</td>
+      </tr>
+      <tr>
+        <th>Active</th>
+        <td>{{purchaseRequest.Active}}</td>
+      </tr>
+      <tr>
+        <th>Reason For Rejection</th>
+        <td>{{purchaseRequest.ReasonForRejection}}</td>
+      </tr>
+    </table>
+    <a routerLink='/purchaserequests/edit/{{purchaseRequest.Id}}' class="btn-primary btn">Edit</a>
+    <button (click)='remove()' class="btn btn-danger">Delete</button>
+  </div>
+</div>

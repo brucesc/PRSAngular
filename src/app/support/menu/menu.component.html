@@ -1,0 +1,8 @@
+<nav>
+  <ul>
+    <li *ngFor="let menu of menuItems"> 
+      <app-menu-item [menuItem]="menu"></app-menu-item> <!-- we have a property that is allowed to be set outside of the component because of @Input()-->
+    </li>
+  </ul>
+</nav>
+<!-- square brackets [] says im going to put something in it. [menuItem], but we need @Input() for that to be allowed. -->

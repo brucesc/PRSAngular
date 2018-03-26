@@ -1,0 +1,9 @@
+a {
+    color: white;
+    text-decoration: none;
+    padding: 0 10px;
+    font-family: Tahoma;
+}
+a:hover {
+    background-color: rgb(90, 226, 27);
+}

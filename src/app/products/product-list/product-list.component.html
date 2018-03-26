@@ -1,0 +1,39 @@
+<div id="component">
+  <div id="pagetitle">
+    <span>{{ pagetitle }}</span> |
+    <a routerLink='/products/create'>Create New</a>
+  </div>
+  <div id="content">
+    <table class="table table-sm table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th>Id</th>
+          <th>Vendor</th>
+          <th>Part Number</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Unit</th>
+          <th>Photo Path</th>
+          <th>Active</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let p of products'>
+          <td>{{p.Id}}</td>
+          <td>{{p.vendor.Name}}</td>
+          <td>{{p.PartNumber}}</td>
+          <td>{{p.Name}}</td>
+          <td>{{p.Price | currency}}</td>
+          <td>{{p.Unit}}</td>
+          <td>{{p.PhotoPath}}</td>
+          <td>{{p.Active ? 'Yes' : ''}}</td>
+          <td>
+            <a routerLink='/products/detail/{{p.Id}}'>detail</a> |
+            <a routerLink='/products/edit/{{p.Id}}'>edit</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

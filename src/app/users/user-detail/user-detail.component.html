@@ -1,0 +1,24 @@
+<div id="component">
+  <div id="pagetitle">
+    <span>{{ pagetitle }}</span>
+  </div>
+  <div id="content" *ngIf='user'>
+    <table class="table table-sm">
+      <tr><th>Id</th><td>{{user.Id}}</td></tr>
+      <tr><th>User Name</th><td>{{user.UserName}}</td></tr>
+      <tr><th>Password</th><td>{{user.Password}}</td></tr>
+      <tr><th>First Name</th><td>{{user.FirstName}}</td></tr>
+      <tr><th>Last Name</th><td>{{user.LastName}}</td></tr>
+      <tr><th>Phone</th><td>{{user.Phone}}</td></tr>
+      <tr><th>Email</th><td>{{user.Email}}</td></tr>
+      <tr><th>Reviewer</th><td>{{user.IsReviewer}}</td></tr>
+      <tr><th>Admin</th><td>{{user.IsAdmin}}</td></tr>
+      <tr><th>Active</th><td>{{user.Active}}</td></tr>
+      <tr><th>Date Created</th><td>{{user.DateCreated}}</td></tr>
+      <tr><th>Date Updated</th><td>{{user.DateUpdated}}</td></tr>
+    </table>
+    <a routerLink='/users/edit/{{user.Id}}' class="btn-primary btn">Edit</a>      
+          <button (click)='remove()' class="btn btn-danger">Delete</button>
+
+  </div>
+  </div>
