@@ -28,4 +28,8 @@ export class UserService {
   Remove(user: User): Observable<any> {
     return this.http.post(url + 'Remove', user) as Observable<any>;
   }
+
+  Login(username: string, password: string): Observable<any> {
+    return this.http.get(url + 'Login/' + username + '/' + password) as Observable<any>;
+  }
 }

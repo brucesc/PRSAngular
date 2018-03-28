@@ -23,7 +23,7 @@ export class PurchaseRequestLineItemDetailComponent implements OnInit {
   remove(): void {
     this.PurchaseRequestLineItemSvc.Remove(this.prli).subscribe(res => {
       console.log(res);
-      this.router.navigateByUrl('/purchaserequestlineitems/list/{{ rId }}');
+      this.router.navigateByUrl('/purchaserequestlineitems/list/' + this.rId);
     });
   }
 

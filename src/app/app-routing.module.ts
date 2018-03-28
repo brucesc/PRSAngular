@@ -22,6 +22,7 @@ import { PurchaseRequestLineItemCreateComponent } from './purchase-request-line-
 import { PurchaseRequestLineItemEditComponent } from './purchase-request-line-items/purchase-request-line-item-edit/purchase-request-line-item-edit.component';
 import { PurchaseRequestLineItemDetailComponent } from './purchase-request-line-items/purchase-request-line-item-detail/purchase-request-line-item-detail.component';
 import { PurchaseRequestLineItemListComponent } from './purchase-request-line-items/purchase-request-line-item-list/purchase-request-line-item-list.component';
+import { UserLoginComponent } from './users/user-login/user-login.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: 'users/edit/:id', component: UserEditComponent },
   { path: 'users/list', component: UserListComponent },
   { path: 'users/create', component: UserCreateComponent },
+  { path: 'users/login', component: UserLoginComponent },
   { path: 'vendors/detail/:id', component: VendorDetailComponent },
   { path: 'vendors/edit/:id', component: VendorEditComponent },
   { path: 'vendors/list', component: VendorListComponent },

@@ -19,6 +19,7 @@ import { MenuItemComponent } from './support/menu/menu-item.component';
 import { UserListComponent } from './users/user-list/user-list.component';
 import { UserDetailComponent } from './users/user-detail/user-detail.component';
 import { UserCreateComponent } from './users/user-create/user-create.component';
+import { UserLoginComponent } from './users/user-login/user-login.component';
 import { UserEditComponent } from './users/user-edit/user-edit.component';
 import { VendorListComponent } from './vendors/vendor-list/vendor-list.component';
 import { VendorEditComponent } from './vendors/vendor-edit/vendor-edit.component';
@@ -64,7 +65,8 @@ import { PurchaseRequestLineItemCreateComponent } from './purchase-request-line-
     PurchaseRequestLineItemListComponent,
     PurchaseRequestLineItemDetailComponent,
     PurchaseRequestLineItemEditComponent,
-    PurchaseRequestLineItemCreateComponent
+    PurchaseRequestLineItemCreateComponent,
+    UserLoginComponent
   ],
   imports: [
     BrowserModule,
