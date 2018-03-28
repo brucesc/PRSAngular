@@ -1,3 +1,76 @@
-<p>
-  purchase-request-edit works!
-</p>
+<div id="component">
+  <div id="pagetitle">
+    <span>{{ pagetitle }}</span>
+  </div>
+  <div id="content" *ngIf='purchaseRequest'>
+    <div class="form-group row">
+      <label class="col-form-label col-sm-2" for="Id">Id:</label>
+      <input [(ngModel)]='purchaseRequest.Id' name="Id" type="text" class="form-control col-sm-6" id="Id" aria-describedby="IdHelp"
+        placeholder="Id" disabled>
+      <small id="IdHelp" class="form-text text-muted col-sm-2">The Purchase Request Id</small>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-form-label col-sm-2" for="Description">Description:</label>
+      <input [(ngModel)]='purchaseRequest.Description' name="Description" type="text" class="form-control col-sm-6" id="Description" aria-describedby="DescriptionHelp"
+        placeholder="Description">
+      <small id="DescriptionHelp" class="form-text text-muted col-sm-2">The Description</small>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-form-label col-sm-2" for="Justification">Justification:</label>
+      <input [(ngModel)]='purchaseRequest.Justification' name="Justification" type="text" class="form-control col-sm-6" id="Justification" aria-describedby="JustificationHelp"
+        placeholder="Justification">
+      <small id="JustificationHelp" class="form-text text-muted col-sm-2">The Justification</small>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-form-label col-sm-2" for="DateNeeded">Date Needed:</label>
+      <input [(ngModel)]='purchaseRequest.DateNeeded' name="DateNeeded" type="text" class="form-control col-sm-6" id="DateNeeded" aria-describedby="DateNeededHelp"
+        placeholder="DateNeeded">
+      <small id="DateNeededHelp" class="form-text text-muted col-sm-2">The Date this Purchase Request is needed</small>
+    </div>
+    <div class="form-group row">
+      <label class="col-form-label col-sm-2" for="DeliveryMode">Delivery Mode:</label>
+      <input [(ngModel)]='purchaseRequest.DeliveryMode' name="DeliveryMode" type="text" class="form-control col-sm-6" id="DeliveryMode" aria-describedby="DeliveryModeHelp"
+        placeholder="DeliveryMode">
+      <small id="DeliveryModeHelp" class="form-text text-muted col-sm-2">The Delivery Mode</small>
+    </div>
+    <div class="form-group row">
+      <label class="col-form-label col-sm-2" for="Status">Status:</label>
+      <input [(ngModel)]='purchaseRequest.Status' name="Status" type="text" class="form-control col-sm-6" id="Status" aria-describedby="StatusHelp"
+        placeholder="Status" disabled>
+      <small id="StatusHelp" class="form-text text-muted col-sm-2">The Status</small>
+    </div>
+    <div class="form-group row">
+      <label class="col-form-label col-sm-2" for="Total">Total:</label>
+      <input [(ngModel)]='purchaseRequest.Total' name="Unit" type="text" class="form-control col-sm-6" id="Unit" aria-describedby="UnitHelpHelp"
+        placeholder="Total" disabled>
+      <small id="TotalHelp" class="form-text text-muted col-sm-2">The Total</small>
+    </div>
+    <div class="form-group row">
+      <label class="col-form-label col-sm-2" for="Active">Active:</label>
+      <input [(ngModel)]='purchaseRequest.Active' name="Active" type="checkbox" class="form-control col-sm-6" id="Active" aria-describedby="ActiveHelp"
+        placeholder="Active">
+      <small id="ActiveHelp" class="form-text text-muted col-sm-2">The Active</small>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-form-label col-sm-2" for="ReasonForRejection">Reason For Rejection:</label>
+      <input [(ngModel)]='purchaseRequest.ReasonForRejection' name="ReasonForRejection" type="text" class="form-control col-sm-6" id="ReasonForRejection" aria-describedby="ReasonForRejectionHelp"
+        placeholder="ReasonForRejection" disabled>
+      <small id="ReasonForRejectionHelp" class="form-text text-muted col-sm-2">The Reason For Rejection</small>
+    </div>
+    <div class="form-group row">
+      <label class="col-form-label col-sm-2" for="purchaseRequestUser">User:</label>
+      <div class="col-sm-6 select-list">
+        <select [(ngModel)]='purchaseRequest.UserId' [compareWith]='compareFn' class="form-control" id="purchaseRequestUser" name="User" disabled>
+          <option *ngFor='let u of users' [ngValue]='u.Id' [selected]='u.Id == purchaseRequest.UserId'>{{u.UserName}}</option>
+        </select>
+      </div>
+    </div>
+    <div>
+      <button (click)='change()' class="btn btn-warning">Change</button>
+    </div>
+  </div>
+</div>

@@ -39,3 +39,4 @@ export class VendorEditComponent implements OnInit {
     });
   }
 }
+

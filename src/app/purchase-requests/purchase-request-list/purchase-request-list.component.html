@@ -27,10 +27,11 @@
           <td>{{p.DateNeeded}}</td>
           <td>{{p.DeliveryMode}}</td>
           <td>{{p.Status}}</td>
-          <td>{{p.Total}}</td>
+          <td>{{p.Total | currency}}</td>
           <td>
             <a routerLink='/purchaserequests/detail/{{p.Id}}'>detail</a> |
-            <a routerLink='/purchaserequests/edit/{{p.Id}}'>edit</a>
+            <a routerLink='/purchaserequests/edit/{{p.Id}}'>edit</a> | 
+            <a routerLink='/purchaserequestlineitems/list/{{p.Id}}'>lines</a>
           </td>
         </tr>
       </tbody>

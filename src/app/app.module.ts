@@ -7,6 +7,9 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { UserService } from './services/user.service';
 import { VendorService } from './services/vendor.service';
+import { ProductService } from './services/product.service';
+import { PurchaseRequestService } from './services/purchase-request.service';
+import { PurchaseRequestLineItemService } from './services/purchase-request-line-item.service';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './support/home/home.component';
@@ -25,12 +28,14 @@ import { PurchaseRequestListComponent } from './purchase-requests/purchase-reque
 import { PurchaseRequestDetailComponent } from './purchase-requests/purchase-request-detail/purchase-request-detail.component';
 import { PurchaseRequestEditComponent } from './purchase-requests/purchase-request-edit/purchase-request-edit.component';
 import { PurchaseRequestCreateComponent } from './purchase-requests/purchase-request-create/purchase-request-create.component';
-import { PurchaseRequestService } from './services/purchase-request.service';
 import { ProductListComponent } from './products/product-list/product-list.component';
 import { ProductDetailComponent } from './products/product-detail/product-detail.component';
 import { ProductEditComponent } from './products/product-edit/product-edit.component';
 import { ProductCreateComponent } from './products/product-create/product-create.component';
-import { ProductService } from './services/product.service';
+import { PurchaseRequestLineItemListComponent } from './purchase-request-line-items/purchase-request-line-item-list/purchase-request-line-item-list.component';
+import { PurchaseRequestLineItemDetailComponent } from './purchase-request-line-items/purchase-request-line-item-detail/purchase-request-line-item-detail.component';
+import { PurchaseRequestLineItemEditComponent } from './purchase-request-line-items/purchase-request-line-item-edit/purchase-request-line-item-edit.component';
+import { PurchaseRequestLineItemCreateComponent } from './purchase-request-line-items/purchase-request-line-item-create/purchase-request-line-item-create.component';
 
 
 @NgModule({
@@ -55,7 +60,11 @@ import { ProductService } from './services/product.service';
     ProductListComponent,
     ProductDetailComponent,
     ProductEditComponent,
-    ProductCreateComponent
+    ProductCreateComponent,
+    PurchaseRequestLineItemListComponent,
+    PurchaseRequestLineItemDetailComponent,
+    PurchaseRequestLineItemEditComponent,
+    PurchaseRequestLineItemCreateComponent
   ],
   imports: [
     BrowserModule,
@@ -67,6 +76,7 @@ import { ProductService } from './services/product.service';
     UserService,
     VendorService,
     PurchaseRequestService,
+    PurchaseRequestLineItemService,
     ProductService
   ],
   bootstrap: [AppComponent]

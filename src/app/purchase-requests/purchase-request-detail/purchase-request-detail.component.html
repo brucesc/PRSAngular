@@ -46,6 +46,7 @@
       </tr>
     </table>
     <a routerLink='/purchaserequests/edit/{{purchaseRequest.Id}}' class="btn-primary btn">Edit</a>
+        <button (click)='review()' class="btn btn-secondary">Review</button>
     <button (click)='remove()' class="btn btn-danger">Delete</button>
   </div>
 </div>

@@ -1,0 +1,23 @@
+<div id="component">
+  <div id="pagetitle">
+    <span>{{ pagetitle }}</span>
+  </div>
+  <div id="content" *ngIf='prli'>
+    <table class="table table-sm">
+      <tr>
+        <th>Id</th>
+        <td>{{prli.Id}}</td>
+      </tr>
+      <tr>
+        <th>Product</th>
+        <td>{{prli.Product.Name}}</td>
+      </tr>
+      <tr>
+        <th>Quantity</th>
+        <td>{{prli.Quantity}}</td>
+      </tr>      
+    </table>
+    <a routerLink='/purchaserequestlineitems/edit/{{ rId }}/{{ rlId }}' class="btn-primary btn">Edit</a>
+    <button (click)='remove()' class="btn btn-danger">Delete</button>
+  </div>
+</div>

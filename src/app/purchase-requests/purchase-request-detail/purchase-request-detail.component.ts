@@ -19,6 +19,18 @@ export class PurchaseRequestDetailComponent implements OnInit {
       private route: ActivatedRoute
     ) { }
 
+    review(): void {
+      if (this.purchaseRequest.Total <= 50) {
+        this.purchaseRequest.Status = 'APPROVED';
+      } else {
+        this.purchaseRequest.Status = 'REVIEW';
+      }
+      this.PurchaseRequestSvc.Change(this.purchaseRequest).subscribe( pr => {
+        console.log(pr);
+        this.router.navigateByUrl('/purchaserequests/list');
+      });
+    }
+
     remove(): void {
       this.PurchaseRequestSvc.Remove(this.purchaseRequest).subscribe( res => {
         console.log(res);
