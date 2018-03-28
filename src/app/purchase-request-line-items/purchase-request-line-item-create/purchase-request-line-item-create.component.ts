@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { PurchaseRequestLineItem } from '../../models/purchase-request-line-item';
+import { ActivatedRoute, Router } from '@angular/router';
+
 import { PurchaseRequestLineItemService } from '../../services/purchase-request-line-item.service';
+import { PurchaseRequestLineItem } from '../../models/purchase-request-line-item';
 import { Product } from '../../models/product';
 import { ProductService } from '../../services/product.service';
-import { ActivatedRoute, Router } from '@angular/router';
-import { PurchaseRequestService } from '../../services/purchase-request.service';
 
 @Component({
   selector: 'app-purchase-request-line-item-create',
@@ -16,12 +16,11 @@ export class PurchaseRequestLineItemCreateComponent implements OnInit {
   pagetitle: string = 'Line Item Create';
   products: Product[];
   rId: number;
-  prli: PurchaseRequestLineItem = new PurchaseRequestLineItem(0, this.rId, 0, 0 );
+  prli: PurchaseRequestLineItem = new PurchaseRequestLineItem(0, 0, 0, 1);
 
   constructor(
     private ProductSvc: ProductService,
     private PRLISvc: PurchaseRequestLineItemService,
-    private PurchaseRequestSvc: PurchaseRequestService,
     private route: ActivatedRoute,
     private router: Router
   ) { }
@@ -31,20 +30,26 @@ export class PurchaseRequestLineItemCreateComponent implements OnInit {
   }
 
   create(): void {
+    this.prli.PurchaseRequestId = this.rId;
+    console.log('Before Create:', this.prli);
     this.PRLISvc.Create(this.prli).subscribe( prli => {
-      console.log(prli);
-      this.router.navigateByUrl('purchaserequestlineitems/list/rId');
+      console.log('After Create:', prli);
+      this.router.navigateByUrl('/purchaserequestlineitems/list/' + this.rId);
+    });
+  }
+
+  getProductList() {
+    this.ProductSvc.List().subscribe(p => {
+      this.products = p;
+      console.log('Products:', this.products);
     });
   }
 
   ngOnInit() {
     this.route.params.subscribe(p => {
-      this.rId = p['id'];
+      this.rId = +p['id'];
       console.log(p);
-    });
-    this.ProductSvc.List().subscribe( p => {
-      this.products = p;
-      console.log(p);
+      this.getProductList();
     });
   }
 

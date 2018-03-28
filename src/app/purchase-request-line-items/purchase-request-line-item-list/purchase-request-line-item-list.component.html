@@ -53,7 +53,7 @@
           <td>{{prli.Id}}</td>
           <td>{{prli.Product.Name}}</td>
           <td>{{prli.Quantity}}</td>
-          <td>{{prli.Product.Price}}</td>
+          <td>{{prli.Product.Price | currency}}</td>
           <td>{{(prli.Quantity * prli.Product.Price) | currency}}</td>
           <td>
             <a routerLink='/purchaserequestlineitems/detail/{{purchaseRequest.Id}}/{{prli.Id}}'>detail</a> |
