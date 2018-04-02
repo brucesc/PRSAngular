@@ -1,12 +1,21 @@
-<p>
-  user-login works!
-</p>
+<div id="component">
+  <div id="pagetitle">
+    <span>{{ pagetitle }}</span>
+  </div>
+  <div id="content">
 <div class="form-group row">
-  <label class="col-form-label col-sm-2" for="UserName">Username:</label>
-<input [(ngModel)]='user.UserName' name="UserName" type="text" class="form-control col-sm-6" id="UserName" placeholder="username">
+  <label class="col-form-label col-sm-2" for="username">Username:</label>
+  <input [(ngModel)]='user.UserName' name="UserName" type="text" class="form-control col-sm-6" id="username" aria-describedby="UserNameHelp"
+    placeholder="Username">
+  <small id="UserNameHelp" class="form-text text-muted col-sm-2">{{ message }}</small>
 </div>
 <div class="form-group row">
   <label class="col-form-label col-sm-2" for="Password">Password:</label>
-  <input [(ngModel)]='user.Password' name="Password" type="password" class="form-control col-sm-6" id="Password" placeholder="password">
+  <input [(ngModel)]='user.Password' name="Password" type="text" class="form-control col-sm-6" id="Password" aria-describedby="PasswordHelp"
+    placeholder="Password">
+  <small id="PasswordHelp" class="form-text text-muted col-sm-2">{{ message }}</small>
 </div>
-<button class="btn-primary" (click)='submit()' type="submit">Submit</button>
+<button class="btn btn-primary" (click)='submit()' type="submit">Submit</button>
+</div>
+</div>
+

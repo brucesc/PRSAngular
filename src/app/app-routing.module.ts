@@ -23,33 +23,38 @@ import { PurchaseRequestLineItemEditComponent } from './purchase-request-line-it
 import { PurchaseRequestLineItemDetailComponent } from './purchase-request-line-items/purchase-request-line-item-detail/purchase-request-line-item-detail.component';
 import { PurchaseRequestLineItemListComponent } from './purchase-request-line-items/purchase-request-line-item-list/purchase-request-line-item-list.component';
 import { UserLoginComponent } from './users/user-login/user-login.component';
+import { ReviewListComponent } from './purchase-requests/review-list/review-list.component';
+import { ReviewItemComponent } from './purchase-requests/review-item/review-item.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'users/detail/:id', component: UserDetailComponent },
-  { path: 'users/edit/:id', component: UserEditComponent },
-  { path: 'users/list', component: UserListComponent },
-  { path: 'users/create', component: UserCreateComponent },
+  { path: '', redirectTo: '/users/login', pathMatch: 'full' },
+  { path: 'users/detail/:id', component: UserDetailComponent, canActivate: [AuthGuard] },
+  { path: 'users/edit/:id', component: UserEditComponent, canActivate: [AuthGuard] },
+  { path: 'users/list', component: UserListComponent, canActivate: [AuthGuard] },
+  { path: 'users/create', component: UserCreateComponent, canActivate: [AuthGuard] },
   { path: 'users/login', component: UserLoginComponent },
-  { path: 'vendors/detail/:id', component: VendorDetailComponent },
-  { path: 'vendors/edit/:id', component: VendorEditComponent },
-  { path: 'vendors/list', component: VendorListComponent },
-  { path: 'vendors/create', component: VendorCreateComponent },
-  { path: 'purchaserequests/detail/:id', component: PurchaseRequestDetailComponent },
-  { path: 'purchaserequests/edit/:id', component: PurchaseRequestEditComponent },
-  { path: 'purchaserequests/list', component: PurchaseRequestListComponent },
-  { path: 'purchaserequests/create', component: PurchaseRequestCreateComponent },
-  { path: 'products/detail/:id', component: ProductDetailComponent },
-  { path: 'products/edit/:id', component: ProductEditComponent },
-  { path: 'products/list', component: ProductListComponent },
-  { path: 'products/create', component: ProductCreateComponent },
-  { path: 'purchaserequestlineitems/detail/:rid/:rlid', component: PurchaseRequestLineItemDetailComponent },
-  { path: 'purchaserequestlineitems/edit/:rid/:rlid', component: PurchaseRequestLineItemEditComponent },
-  { path: 'purchaserequestlineitems/list/:id', component: PurchaseRequestLineItemListComponent },
-  { path: 'purchaserequestlineitems/create/:id', component: PurchaseRequestLineItemCreateComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'about', component: AboutComponent },
-  { path: '**', component: HomeComponent }
+  { path: 'vendors/detail/:id', component: VendorDetailComponent, canActivate: [AuthGuard] },
+  { path: 'vendors/edit/:id', component: VendorEditComponent, canActivate: [AuthGuard] },
+  { path: 'vendors/list', component: VendorListComponent, canActivate: [AuthGuard] },
+  { path: 'vendors/create', component: VendorCreateComponent, canActivate: [AuthGuard] },
+  { path: 'purchaserequests/needsreviewlist', component: ReviewListComponent},
+  { path: 'purchaserequests/reviewitem/:id', component: ReviewItemComponent},
+  { path: 'purchaserequests/detail/:id', component: PurchaseRequestDetailComponent, canActivate: [AuthGuard] },
+  { path: 'purchaserequests/edit/:id', component: PurchaseRequestEditComponent, canActivate: [AuthGuard] },
+  { path: 'purchaserequests/list', component: PurchaseRequestListComponent, canActivate: [AuthGuard] },
+  { path: 'purchaserequests/create', component: PurchaseRequestCreateComponent, canActivate: [AuthGuard] },
+  { path: 'products/detail/:id', component: ProductDetailComponent, canActivate: [AuthGuard] },
+  { path: 'products/edit/:id', component: ProductEditComponent, canActivate: [AuthGuard] },
+  { path: 'products/list', component: ProductListComponent, canActivate: [AuthGuard] },
+  { path: 'products/create', component: ProductCreateComponent, canActivate: [AuthGuard] },
+  { path: 'purchaserequestlineitems/detail/:rid/:rlid', component: PurchaseRequestLineItemDetailComponent, canActivate: [AuthGuard] },
+  { path: 'purchaserequestlineitems/edit/:rid/:rlid', component: PurchaseRequestLineItemEditComponent, canActivate: [AuthGuard] },
+  { path: 'purchaserequestlineitems/list/:id', component: PurchaseRequestLineItemListComponent, canActivate: [AuthGuard] },
+  { path: 'purchaserequestlineitems/create/:id', component: PurchaseRequestLineItemCreateComponent, canActivate: [AuthGuard] },
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: 'about', component: AboutComponent, canActivate: [AuthGuard] },
+  { path: '**', component: HomeComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({

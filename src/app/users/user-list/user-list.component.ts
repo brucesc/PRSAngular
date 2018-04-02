@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { User } from '../../models/user';
+import { AuthenticateService } from '../../services/authenticate.service';
+import { SortPipe } from '../../pipes/sort.pipe';
 
 
 @Component({
@@ -9,11 +11,15 @@ import { User } from '../../models/user';
   styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent implements OnInit {
-
   pagetitle: string = 'User List';
   users: User[];
+  sortBy: string = 'Id';
 
-  constructor(private UserSvc: UserService) { }
+  constructor(private UserSvc: UserService) {}
+
+  setSortBy(column: string): void {
+    this.sortBy = column;
+  }
 
   ngOnInit() {
     this.UserSvc.List().subscribe(u => {
@@ -21,5 +27,4 @@ export class UserListComponent implements OnInit {
       this.users = u;
     });
   }
-
 }

@@ -1,0 +1,37 @@
+<div id="component">
+  <div id="pagetitle">
+    <span>{{ pagetitle }}</span> |
+  </div>
+  <div id="content">
+    <table class="table table-sm table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th>Id</th>
+          <th>User</th>
+          <th>Description</th>
+          <th>Justification</th>
+          <th>Date Needed</th>
+          <th>Delivery Mode</th>
+          <th>Status</th>
+          <th>Total</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let p of purchaseRequests'>
+          <td>{{p.Id}}</td>
+          <td>{{p.User.UserName}}</td>
+          <td>{{p.Description}}</td>
+          <td>{{p.Justification}}</td>
+          <td>{{p.DateNeeded}}</td>
+          <td>{{p.DeliveryMode}}</td>
+          <td>{{p.Status}}</td>
+          <td>{{p.Total | currency}}</td>
+          <td>
+            <a routerLink='/purchaserequests/reviewitem/{{p.Id}}'>Review</a>            
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

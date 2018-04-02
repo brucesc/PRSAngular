@@ -10,6 +10,7 @@ import { VendorService } from './services/vendor.service';
 import { ProductService } from './services/product.service';
 import { PurchaseRequestService } from './services/purchase-request.service';
 import { PurchaseRequestLineItemService } from './services/purchase-request-line-item.service';
+import { AuthenticateService } from './services/authenticate.service';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './support/home/home.component';
@@ -37,6 +38,10 @@ import { PurchaseRequestLineItemListComponent } from './purchase-request-line-it
 import { PurchaseRequestLineItemDetailComponent } from './purchase-request-line-items/purchase-request-line-item-detail/purchase-request-line-item-detail.component';
 import { PurchaseRequestLineItemEditComponent } from './purchase-request-line-items/purchase-request-line-item-edit/purchase-request-line-item-edit.component';
 import { PurchaseRequestLineItemCreateComponent } from './purchase-request-line-items/purchase-request-line-item-create/purchase-request-line-item-create.component';
+import { ReviewListComponent } from './purchase-requests/review-list/review-list.component';
+import { ReviewItemComponent } from './purchase-requests/review-item/review-item.component';
+import { AuthGuard } from './guards/auth.guard';
+import { SortPipe } from './pipes/sort.pipe';
 
 
 @NgModule({
@@ -66,7 +71,10 @@ import { PurchaseRequestLineItemCreateComponent } from './purchase-request-line-
     PurchaseRequestLineItemDetailComponent,
     PurchaseRequestLineItemEditComponent,
     PurchaseRequestLineItemCreateComponent,
-    UserLoginComponent
+    UserLoginComponent,
+    ReviewListComponent,
+    ReviewItemComponent,
+    SortPipe
   ],
   imports: [
     BrowserModule,
@@ -79,7 +87,9 @@ import { PurchaseRequestLineItemCreateComponent } from './purchase-request-line-
     VendorService,
     PurchaseRequestService,
     PurchaseRequestLineItemService,
-    ProductService
+    ProductService,
+    AuthenticateService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

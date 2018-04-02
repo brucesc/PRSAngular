@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from '../../services/user.service';
 import { User } from '../../models/user';
+import { AuthenticateService } from '../../services/authenticate.service';
 
 @Component({
   selector: 'app-user-edit',

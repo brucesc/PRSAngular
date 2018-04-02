@@ -3,23 +3,23 @@
     <span>{{ pagetitle }}</span> |
     <a routerLink='/purchaserequests/create'>Create New</a>
   </div>
-  <div id="content">
+  <div id="content" *ngIf="purchaseRequests">
     <table class="table table-sm table-hover">
       <thead class="thead-dark">
         <tr>
-          <th>Id</th>
-          <th>User</th>
-          <th>Description</th>
-          <th>Justification</th>
-          <th>Date Needed</th>
-          <th>Delivery Mode</th>
-          <th>Status</th>
-          <th>Total</th>
-          <th>Actions</th>
+          <th><a class="btn btn-link font-weight-bold" (click)="setSortBy('Id')">Id</a></th>
+          <th><a class="btn btn-link font-weight-bold" (click)="setSortBy('User.UserName')">User</a></th>
+          <th><a class="btn btn-link font-weight-bold" (click)="setSortBy('Description')">Description</a></th>
+          <th><a class="btn btn-link font-weight-bold" (click)="setSortBy('Justification')">Justification</a></th>
+          <th><a class="btn btn-link font-weight-bold" (click)="setSortBy('DateNeeded')">Date Needed</a></th>
+          <th><a class="btn btn-link font-weight-bold" (click)="setSortBy('DeliveryMode')">Delivery Mode</a></th>
+          <th><a class="btn btn-link font-weight-bold" (click)="setSortBy('Status')">Status</a></th>
+          <th><a class="btn btn-link font-weight-bold" (click)="setSortBy('Total')">Total</a></th>
+          <th><a class="btn btn-link font-weight-bold" (click)="setSortBy('Actions')">Actions</a></th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor='let p of purchaseRequests'>
+        <tr *ngFor='let p of purchaseRequests | sort:sortBy'>
           <td>{{p.Id}}</td>
           <td>{{p.User.UserName}}</td>
           <td>{{p.Description}}</td>

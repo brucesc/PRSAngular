@@ -29,4 +29,8 @@ export class PurchaseRequestService {
   Remove(purchaseRequest: PurchaseRequest): Observable<any> {
     return this.http.post(url + 'Remove', purchaseRequest) as Observable<any>;
   }
+
+  NeedsReviewList(): Observable<PurchaseRequest[]> {
+    return this.http.get(url + 'NeedsReviewList') as Observable<PurchaseRequest[]>;
+  }
 }

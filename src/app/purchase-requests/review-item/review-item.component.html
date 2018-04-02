@@ -1,0 +1,57 @@
+<div id="component" *ngIf='purchaseRequest'>
+  <div id="pagetitle">
+    <span>{{ pagetitle }}</span> 
+  </div>
+  <div id="content">
+    <table class="table table-sm">
+      <thead class="thead-dark">
+        <tr>
+          <th>Id</th>
+          <th>User</th>
+          <th>Description</th>
+          <th>Justification</th>
+          <th>Date Needed</th>
+          <th>Delivery Mode</th>
+          <th>Status</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{purchaseRequest.Id}}</td>
+          <td>{{purchaseRequest.User.UserName}}</td>
+          <td>{{purchaseRequest.Description}}</td>
+          <td>{{purchaseRequest.Justification}}</td>
+          <td>{{purchaseRequest.DateNeeded}}</td>
+          <td>{{purchaseRequest.DeliveryMode}}</td>
+          <td>{{purchaseRequest.Status}}</td>
+          <td>{{purchaseRequest.Total | currency}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <p></p>
+    <table class="table table-sm table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th>Id</th>
+          <th>Product</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th>Subtotal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let prli of purchaseRequest.PurchaseRequestLineItems'>
+          <td>{{prli.Id}}</td>
+          <td>{{prli.Product.Name}}</td>
+          <td>{{prli.Quantity}}</td>
+          <td>{{prli.Product.Price | currency}}</td>
+          <td>{{(prli.Quantity * prli.Product.Price) | currency}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <button (click)='Approve()' class="btn btn-success">Approve</button> | 
+        <button (click)='Reject()' class="btn btn-danger">Reject</button>
+
+  </div>
+</div>
