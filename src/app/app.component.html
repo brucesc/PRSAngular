@@ -1,3 +1,9 @@
+<div [hidden]='isLoggedIn'>
 <app-menu></app-menu>
+</div>
+<div id="router-outlet">
 <router-outlet></router-outlet>
-<footer>This is the footer</footer>
+</div>
+<div [hidden]='isLoggedIn'>
+<footer>Project created by Steven Bruce. Thanks to MAX Technical Training.</footer>
+</div>

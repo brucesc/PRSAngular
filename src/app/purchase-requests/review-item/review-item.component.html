@@ -33,15 +33,15 @@
     <table class="table table-sm table-hover">
       <thead class="thead-dark">
         <tr>
-          <th>Id</th>
-          <th>Product</th>
-          <th>Quantity</th>
-          <th>Price</th>
-          <th>Subtotal</th>
+          <th><a class="btn btn-link btn-sm font-weight-bold" (click)="setSortBy('Id')">Id</a></th>
+          <th><a class="btn btn-link btn-sm font-weight-bold" (click)="setSortBy('Product')">Product</a></th>
+          <th><a class="btn btn-link btn-sm font-weight-bold" (click)="setSortBy('Quantity')">Quantity</a></th>
+          <th><a class="btn btn-link btn-sm font-weight-bold" (click)="setSortBy('Price')">Price</a></th>
+          <th><a class="btn btn-link btn-sm font-weight-bold" (click)="setSortBy('Subtotal')">Subtotal</a></th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor='let prli of purchaseRequest.PurchaseRequestLineItems'>
+        <tr *ngFor='let prli of purchaseRequest.PurchaseRequestLineItems | sort:sortBy'>
           <td>{{prli.Id}}</td>
           <td>{{prli.Product.Name}}</td>
           <td>{{prli.Quantity}}</td>

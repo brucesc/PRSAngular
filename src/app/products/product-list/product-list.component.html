@@ -3,23 +3,22 @@
     <span>{{ pagetitle }}</span> |
     <a routerLink='/products/create'>Create New</a>
   </div>
-  <div id="content">
+  <div id="content" *ngIf="products">
     <table class="table table-sm table-hover">
       <thead class="thead-dark">
         <tr>
-          <th>Id</th>
-          <th>Vendor</th>
-          <th>Part Number</th>
-          <th>Name</th>
-          <th>Price</th>
-          <th>Unit</th>
-          <th>Photo Path</th>
-          <th>Active</th>
-          <th>Actions</th>
+          <th><a class="btn btn-link btn-sm font-weight-bold" (click)="setSortBy('Id')">Id</a></th>
+          <th><a class="btn btn-link btn-sm font-weight-bold" (click)="setSortBy('vendor[Name]')">Vendor</a></th>
+          <th><a class="btn btn-link btn-sm font-weight-bold" (click)="setSortBy('PartNumber')">Part Number</a></th>
+          <th><a class="btn btn-link btn-sm font-weight-bold" (click)="setSortBy('Name')">Name</a></th>
+          <th><a class="btn btn-link btn-sm font-weight-bold" (click)="setSortBy('Price')">Price</a></th>
+          <th><a class="btn btn-link btn-sm font-weight-bold" (click)="setSortBy('Unit')">Unit</a></th>
+          <th><a class="btn btn-link btn-sm font-weight-bold" (click)="setSortBy('PhotoPath')">Photo Path</a></th>
+          <th><a class="btn btn-link btn-sm font-weight-bold">Actions</a></th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor='let p of products'>
+        <tr *ngFor='let p of products | sort:sortBy'>
           <td>{{p.Id}}</td>
           <td>{{p.vendor.Name}}</td>
           <td>{{p.PartNumber}}</td>
@@ -27,7 +26,6 @@
           <td>{{p.Price | currency}}</td>
           <td>{{p.Unit}}</td>
           <td>{{p.PhotoPath}}</td>
-          <td>{{p.Active ? 'Yes' : ''}}</td>
           <td>
             <a routerLink='/products/detail/{{p.Id}}'>detail</a> |
             <a routerLink='/products/edit/{{p.Id}}'>edit</a>

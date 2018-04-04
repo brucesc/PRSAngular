@@ -3,6 +3,7 @@ import { PurchaseRequest } from '../../models/purchase-request';
 import { PurchaseRequestService } from '../../services/purchase-request.service';
 import { AuthenticateService } from '../../services/authenticate.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { SortPipe } from '../../pipes/sort.pipe';
 
 @Component({
   selector: 'app-review-item',
@@ -13,6 +14,7 @@ export class ReviewItemComponent implements OnInit {
 
   pagetitle: string = 'Purchase Request Review';
   purchaseRequest: PurchaseRequest;
+  sortBy: string = 'Id';
 
   constructor(
     private PurchaseRequestSvc: PurchaseRequestService,
@@ -20,6 +22,10 @@ export class ReviewItemComponent implements OnInit {
     private router: Router,
     private auth: AuthenticateService
   ) { }
+
+  setSortBy(column: string): void {
+    this.sortBy = column;
+  }
 
   Approve(): void {
     this.purchaseRequest.Status = 'APPROVED';

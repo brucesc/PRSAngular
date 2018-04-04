@@ -14,6 +14,7 @@ export class PurchaseRequestEditComponent implements OnInit {
   pagetitle: string = 'Purchase Request Edit';
   purchaseRequest: PurchaseRequest;
   users: User[];
+  newDate: string;
   constructor(
     private PurchaseRequestSvc: PurchaseRequestService,
     private route: ActivatedRoute,
@@ -26,6 +27,7 @@ export class PurchaseRequestEditComponent implements OnInit {
   }
 
   change(): void {
+    this.purchaseRequest.DateNeeded = new Date(this.newDate).toISOString();
     this.PurchaseRequestSvc.Change(this.purchaseRequest).subscribe(res => {
       console.log(res);
       this.router.navigateByUrl('/purchaserequests/list');
@@ -35,6 +37,7 @@ export class PurchaseRequestEditComponent implements OnInit {
   getPurchaseRequestById(id) {
     this.PurchaseRequestSvc.Get(id).subscribe(p => {
       this.purchaseRequest = p;
+      this.newDate = p.DateNeeded.slice(0, 10);
       console.log('Purchase Request:', p);
     });
   }

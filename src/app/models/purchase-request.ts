@@ -4,7 +4,7 @@ export class PurchaseRequest {
     UserId: number;
     Description: string;
     Justification: string;
-    DateNeeded: number;
+    DateNeeded: string;
     DeliveryMode: string;
     Status: string;
     Total: number;
@@ -16,7 +16,7 @@ export class PurchaseRequest {
     UserId: number,
     Description: string,
     Justification: string,
-    DateNeeded: number,
+    DateNeeded: string,
     DeliveryMode: string,
     Status: string,
     Total: number,

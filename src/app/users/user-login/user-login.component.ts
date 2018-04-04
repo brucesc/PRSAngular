@@ -31,6 +31,9 @@ export class UserLoginComponent implements OnInit {
         this.auth.getTheLoggedInUser(this.user);
         console.log('After Authentication pass', JSON.parse(localStorage.getItem('currentUser')));
         console.log('Login Successful:', res.Message);
+        this.auth.setIsLoggedIn();
+        this.auth.getReviewPrivileges(this.user);
+        this.auth.getAdminPrivileges(this.user);
         this.router.navigateByUrl('/home');
       } else {
         console.error('Login Failure:', res.Message);
@@ -41,6 +44,7 @@ export class UserLoginComponent implements OnInit {
 
   ngOnInit() {
     this.auth.logout();
+    this.auth.setNotLoggedIn();
   }
 
 }
