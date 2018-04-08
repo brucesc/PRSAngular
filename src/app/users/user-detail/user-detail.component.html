@@ -14,8 +14,8 @@
       <tr><th>Reviewer</th><td>{{user.IsReviewer}}</td></tr>
       <tr><th>Admin</th><td>{{user.IsAdmin}}</td></tr>
       <tr><th>Active</th><td>{{user.Active}}</td></tr>
-      <tr><th>Date Created</th><td>{{user.DateCreated}}</td></tr>
-      <tr><th>Date Updated</th><td>{{user.DateUpdated}}</td></tr>
+      <tr><th>Date Created</th><td>{{user.DateCreated | date}}</td></tr>
+      <tr><th>Date Updated</th><td>{{user.DateUpdated | date:'EEE, MMM d, y, h:mm:ss a'}}</td></tr>
     </table>
     <a routerLink='/users/edit/{{user.Id}}' class="btn-primary btn">Edit</a>      
           <button (click)='remove()' class="btn btn-danger">Delete</button>

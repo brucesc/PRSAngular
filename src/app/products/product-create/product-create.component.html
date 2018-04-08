@@ -2,39 +2,40 @@
   <div id="pagetitle">
     <span>{{ pagetitle }}</span>
   </div>
-  <div id="content" *ngIf='product'>
+  <form id="content">
+  <div *ngIf='product'>
     <div class="form-group row">
       <label class="col-form-label col-sm-2" for="PartNumber">PartNumber:</label>
       <input [(ngModel)]='product.PartNumber' name="PartNumber" type="text" class="form-control col-sm-6" id="PartNumber" aria-describedby="PartNumberHelp"
-        placeholder="PartNumber">
+        placeholder="PartNumber" required>
       <small id="PartNumberHelp" class="form-text text-muted col-sm-2">The PartNumber</small>
     </div>
 
     <div class="form-group row">
       <label class="col-form-label col-sm-2" for="Name">Name:</label>
       <input [(ngModel)]='product.Name' name="Name" type="text" class="form-control col-sm-6" id="Name" aria-describedby="NameHelp"
-        placeholder="Name">
+        placeholder="Name" required>
       <small id="NameHelp" class="form-text text-muted col-sm-2">The Product Name</small>
     </div>
 
     <div class="form-group row">
       <label class="col-form-label col-sm-2" for="Price">Price:</label>
       <input [(ngModel)]='product.Price' name="Price" type="number" class="form-control col-sm-6" id="Price" aria-describedby="PriceHelp"
-        placeholder="Price">
+        placeholder="Price" required>
       <small id="PriceHelp" class="form-text text-muted col-sm-2">The Price</small>
     </div>
 
     <div class="form-group row">
       <label class="col-form-label col-sm-2" for="Unit">Unit:</label>
       <input [(ngModel)]='product.Unit' name="Unit" type="text" class="form-control col-sm-6" id="Unit" aria-describedby="UnitHelp"
-        placeholder="UnitHelp">
+        placeholder="UnitHelp" required>
       <small id="Unit" class="form-text text-muted col-sm-2">The Unit</small>
     </div>
 
     <div class="form-group row">
       <label class="col-form-label col-sm-2" for="PhotoPath">Photo Path:</label>
       <input [(ngModel)]='product.PhotoPath' name="PhotoPath" type="text" class="form-control col-sm-6" id="PhotoPath" aria-describedby="PhotoPathHelp"
-        placeholder="PhotoPath">
+        placeholder="PhotoPath" required>
       <small id="PhotoPathHelp" class="form-text text-muted col-sm-2">The Photo Path</small>
     </div>
     <div class="form-group row">
@@ -49,4 +50,5 @@
       <button (click)='create()' class="btn btn-success">Create</button>
     </div>
   </div>
+  </form>
 </div>

@@ -22,6 +22,10 @@ export class PurchaseRequestLineItemListComponent implements OnInit {
     private route: ActivatedRoute
   ) { }
 
+  readyForReview() {
+    
+  }
+
   setSortBy(column: string): void {
     this.sortBy = column;
   }

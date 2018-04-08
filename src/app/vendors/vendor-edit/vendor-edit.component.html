@@ -1,32 +1,8 @@
-<!-- <script>
-  // Example starter JavaScript for disabling form submissions if there are invalid fields
-  (function () {
-    'use strict';
-    window.addEventListener('load', function () {
-      // Fetch all the forms we want to apply custom Bootstrap validation styles to
-      var forms = document.getElementsByClassName('needs-validation');
-      // Loop over them and prevent submission
-      var validation = Array.prototype.filter.call(forms, function (form) {
-        form.addEventListener('submit', function (event) {
-          if (form.checkValidity() === false) {
-            event.preventDefault();
-            event.stopPropagation();
-          }
-          form.classList.add('was-validated');
-        }, false);
-      });
-    }, false);
-  })();
-</script> -->
-
-
-
-
 <div id="component">
   <div id="pagetitle">
     <span>{{ pagetitle }}</span>
   </div>
-  <form id="content" class="needs-validation" novalidate>
+  <form id="content">
     <div *ngIf='vendor'>
     <div class="form-group row">
       <label class="col-form-label col-sm-2" for="code">Code:</label>
@@ -43,7 +19,7 @@
     <div class="form-group row">
       <label class="col-form-label col-sm-2" for="Name">Name:</label>
       <input [(ngModel)]='vendor.Name' name="Name" type="text" class="form-control col-sm-6" id="Name" aria-describedby="NameHelp"
-        placeholder="Name">
+        placeholder="Name" required>
       <small id="NameHelp" class="form-text text-muted col-sm-2">The vendor's name</small>
       <div class="valid-feedback">
         Looks good!
@@ -55,7 +31,7 @@
     <div class="form-group row">
       <label class="col-form-label col-sm-2" for="Address">Address:</label>
       <input [(ngModel)]='vendor.Address' name="Address" type="text" class="form-control col-sm-6" id="Address" aria-describedby="AddressHelp"
-        placeholder="Address">
+        placeholder="Address" required>
       <small id="AddressHelp" class="form-text text-muted col-sm-2">The Street Address</small>
       <div class="valid-feedback">
         Looks good!
@@ -67,7 +43,7 @@
     <div class="form-group row">
       <label class="col-form-label col-sm-2" for="City">City:</label>
       <input [(ngModel)]='vendor.City' name="City" type="text" class="form-control col-sm-6" id="City" aria-describedby="CityHelp"
-        placeholder="City">
+        placeholder="City" required>
       <small id="CityHelp" class="form-text text-muted col-sm-2">The City</small>
       <div class="valid-feedback">
         Looks good!
@@ -79,7 +55,7 @@
     <div class="form-group row">
       <label class="col-form-label col-sm-2" for="State">State:</label>
       <input [(ngModel)]='vendor.State' name="State" type="text" class="form-control col-sm-6" id="State" aria-describedby="StateHelp"
-        placeholder="State Code (example: OH in place of Ohio)">
+        placeholder="State Code (example: OH in place of Ohio)" required>
       <small id="StateHelp" class="form-text text-muted col-sm-2">The State</small>
       <div class="valid-feedback">
         Looks good!
@@ -91,7 +67,7 @@
     <div class="form-group row">
       <label class="col-form-label col-sm-2" for="Zip">Zip:</label>
       <input [(ngModel)]='vendor.Zip' name="Zip" type="text" class="form-control col-sm-6" id="Zip" aria-describedby="ZipHelp"
-        placeholder="Zip">
+        placeholder="Zip" required>
       <small id="ZipHelp" class="form-text text-muted col-sm-2">The Vendor Zip Code</small>
       <div class="valid-feedback">
         Looks good!
@@ -103,7 +79,7 @@
     <div class="form-group row">
       <label class="col-form-label col-sm-2" for="Phone">Phone:</label>
       <input [(ngModel)]='vendor.Phone' name="Phone" type="text" class="form-control col-sm-6" id="Phone" aria-describedby="PhoneHelp"
-        placeholder="Example: 513-123-4567">
+        placeholder="Example: 513-123-4567" required>
       <small id="PhoneHelp" class="form-text text-muted col-sm-2">The vendor's customer service directory phone number</small>
       <div class="valid-feedback">
         Looks good!
@@ -115,7 +91,7 @@
     <div class="form-group row">
       <label class="col-form-label col-sm-2" for="Email">Email:</label>
       <input [(ngModel)]='vendor.Email' name="Email" type="text" class="form-control col-sm-6" id="Email" aria-describedby="EmailHelp"
-        placeholder="Email">
+        placeholder="Email" required>
       <small id="EmailHelp" class="form-text text-muted col-sm-2">Vendor's contact email</small>
       <div class="valid-feedback">
         Looks good!
@@ -127,13 +103,13 @@
     <div class="form-group row">
       <label class="col-form-label col-sm-2" for="IsPreApproved">Pre Approved:</label>
       <input [(ngModel)]='vendor.IsPreApproved' name="IsPreApproved" type="checkbox" class="form-control col-sm-6" id="IsPreApproved" aria-describedby="IsPreapprovedHelp"
-        placeholder="IsPreApproved">
+        placeholder="IsPreApproved" required>
       <small id="IsPreApprovedHelp" class="form-text text-muted col-sm-2">Is the vendor pre approved?</small>      
     </div>
     <div class="form-group row">
       <label class="col-form-label col-sm-2" for="Active">Active:</label>
       <input [(ngModel)]='vendor.Active' name="Active" type="checkbox" class="form-control col-sm-6" id="Active" aria-describedby="ActiveHelp"
-        placeholder="Active">
+        placeholder="Active" required>
       <small id="ActiveHelp" class="form-text text-muted col-sm-2">Is the vendor active?</small>
     </div>
     <div class="form-group">
@@ -146,9 +122,9 @@
           You must check the box before submitting.
         </div>
       </div>
-    </div>
+    <!-- </div>
     <button class="btn btn-primary" type="submit">Submit Change</button>
-    <div>
+    <div> -->
       <button (click)='change()' class="btn btn-warning">Change</button>
     </div>
     </div>

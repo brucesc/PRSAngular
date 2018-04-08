@@ -7,17 +7,22 @@
 <div class="form-group row">
   <label class="col-form-label col-sm-2" for="username">Username:</label>
   <input [(ngModel)]='user.UserName' name="UserName" type="text" class="form-control col-sm-7" id="username" aria-describedby="UserNameHelp"
-    placeholder="Username">
+    placeholder="Username" required>
 </div>
 <div class="form-group row">
   <label class="col-form-label col-sm-2" for="Password">Password:</label>
   <input [(ngModel)]='user.Password' name="Password" type="password" class="form-control col-sm-7" id="Password" aria-describedby="PasswordHelp"
-    placeholder="Password">
+    placeholder="Password" required>
 </div>
 <button class="btn btn-primary" (click)='submit()' type="submit">Login</button>
 <span class="col-sm-3"></span>
 <label id="message" class="text-danger">{{message}}</label>
 </div>
+<!-- <label for="name">Name</label>
+<input type="text" class="form-control" id="name" required [(ngModel)]="model.name" name="name" #name="ngModel">
+<div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+  Name is required
+</div> -->
 </form>
 </div>
 

@@ -13,7 +13,7 @@ import { User } from '../../models/user';
 export class PurchaseRequestCreateComponent implements OnInit {
 
   pagetitle: string = 'Purchase Request Create';
-  purchaseRequest: PurchaseRequest = new PurchaseRequest(0, 0, '', '', 0, '', 'NEW', 0, true, '');
+  purchaseRequest: PurchaseRequest = new PurchaseRequest(0, 0, '', '', '', '', 'NEW', 0, true, '');
   users: User[];
 
   constructor(

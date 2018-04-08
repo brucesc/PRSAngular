@@ -50,7 +50,7 @@
       </tr>
       <tr>
         <th>Date Updated</th>
-        <td>{{vendor.DateUpdated}}</td>
+        <td>{{vendor.DateUpdated | date:'EEE, MMM d, y, h:mm:ss a'}}</td>
       </tr>
     </table>
     <a routerLink='/vendors/edit/{{vendor.Id}}' class="btn-primary btn">Edit</a>

@@ -22,6 +22,7 @@ export class MenuComponent implements OnInit {
   ];
 
   user: User;
+
   constructor(private auth: AuthenticateService) {}
 
   ngOnInit() {

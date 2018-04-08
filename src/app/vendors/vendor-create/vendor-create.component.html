@@ -2,63 +2,65 @@
   <div id="pagetitle">
     <span>{{ pagetitle }}</span>
   </div>
-  <div id="content" *ngIf='vendor'>
+  <form id="content">
+  <div *ngIf='vendor'>
     <div class="form-group row">
       <label class="col-form-label col-sm-2" for="Code">Code:</label>
       <input [(ngModel)]='vendor.Code' name="Code" type="text" class="form-control col-sm-6" id="Code" aria-describedby="CodeHelp"
-        placeholder="Code">
+        placeholder="Code" required>
       <small id="CodeHelp" class="form-text text-muted col-sm-2">The Code</small>
     </div>
     <div class="form-group row">
       <label class="col-form-label col-sm-2" for="Name">Name:</label>
       <input [(ngModel)]='vendor.Name' name="Name" type="text" class="form-control col-sm-6" id="Name" aria-describedby="NameHelp"
-        placeholder="Name">
+        placeholder="Name" required>
       <small id="NameHelp" class="form-text text-muted col-sm-2">The Name</small>
     </div>
     <div class="form-group row">
       <label class="col-form-label col-sm-2" for="Address">Address:</label>
       <input [(ngModel)]='vendor.Address' name="Address" type="text" class="form-control col-sm-6" id="Address" aria-describedby="AddressHelp"
-        placeholder="Address">
+        placeholder="Address" required>
       <small id="AddressHelp" class="form-text text-muted col-sm-2">The Street Address</small>
     </div>
     <div class="form-group row">
       <label class="col-form-label col-sm-2" for="City">City:</label>
       <input [(ngModel)]='vendor.City' name="City" type="text" class="form-control col-sm-6" id="City" aria-describedby="CityHelp"
-        placeholder="City">
+        placeholder="City" required>
       <small id="CityHelp" class="form-text text-muted col-sm-2">The City</small>
     </div>
     <div class="form-group row">
       <label class="col-form-label col-sm-2" for="State">State:</label>
       <input [(ngModel)]='vendor.State' name="State" type="text" class="form-control col-sm-6" id="State" aria-describedby="StateHelp"
-        placeholder="State">
+        placeholder="State" required>
       <small id="StateHelp" class="form-text text-muted col-sm-2">The State Initials (example: OH for Ohio)</small>
     </div>
     <div class="form-group row">
       <label class="col-form-label col-sm-2" for="Zip">Zip:</label>
       <input [(ngModel)]='vendor.Zip' name="Zip" type="text" class="form-control col-sm-6" id="Zip" aria-describedby="ZipHelp"
-        placeholder="Zip">
+        placeholder="Zip" required>
       <small id="ZipHelp" class="form-text text-muted col-sm-2">This Zip Code</small>
     </div>
     <div class="form-group row">
       <label class="col-form-label col-sm-2" for="Phone">Phone:</label>
       <input [(ngModel)]='vendor.Phone' name="Phone" type="text" class="form-control col-sm-6" id="Phone" aria-describedby="PhoneHelp"
-        placeholder="Phone Number">
+        placeholder="Phone Number" required>
       <small id="PhoneHelp" class="form-text text-muted col-sm-2">The phone number</small>
     </div>
     <div class="form-group row">
       <label class="col-form-label col-sm-2" for="Email">Email:</label>
       <input [(ngModel)]='vendor.Email' name="Email" type="text" class="form-control col-sm-6" id="Email" aria-describedby="EmailHelp"
-        placeholder="Email">
+        placeholder="Email" required>
       <small id="EmailHelp" class="form-text text-muted col-sm-2">The Email</small>
     </div>    
     <div class="form-group row">
       <label class="col-form-label col-sm-2" for="IsPreApproved">Pre Approved:</label>
       <input [(ngModel)]='vendor.IsPreApproved' name="IsPreApproved" type="checkbox" class="form-control col-sm-6" id="IsPreApproved" aria-describedby="IsPreapprovedHelp"
-        placeholder="IsPreApproved">
+        placeholder="IsPreApproved" required>
       <small id="IsPreApprovedHelp" class="form-text text-muted col-sm-2">Is the vendor pre approved?</small>
     </div>
     <div>
       <button (click)='create()' class="btn btn-success">Create</button>
     </div>
   </div>
+  </form>
 </div>

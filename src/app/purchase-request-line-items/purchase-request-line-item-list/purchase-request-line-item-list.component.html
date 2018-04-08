@@ -23,7 +23,7 @@
         <td>{{purchaseRequest.User.UserName}}</td>
         <td>{{purchaseRequest.Description}}</td>
         <td>{{purchaseRequest.Justification}}</td>
-        <td>{{purchaseRequest.DateNeeded}}</td>
+        <td>{{purchaseRequest.DateNeeded | date}}</td>
         <td>{{purchaseRequest.DeliveryMode}}</td>
         <td>{{purchaseRequest.Status}}</td>
         <td>{{purchaseRequest.Total | currency}}</td>        
@@ -56,5 +56,8 @@
         </tr>
       </tbody>
     </table>
+    <div>
+      <button type="submit" (click)='readyForReview()' class="btn btn-lg btn-outline-success">Submit for Review</button>
+    </div>
   </div>
 </div>
