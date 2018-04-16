@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Menu } from './menu';
 import { AuthenticateService } from '../../services/authenticate.service';
+// import { PurchaseRequestService } from '../../services/purchase-request.service';
 
 @Component({
   selector: 'app-menu-item',
@@ -10,11 +11,15 @@ import { AuthenticateService } from '../../services/authenticate.service';
 export class MenuItemComponent implements OnInit {
 
   @Input() menuItem: Menu;
+  // reviewBadgeCount: number;
 
-  constructor(private auth: AuthenticateService) { }
+  constructor(
+    private auth: AuthenticateService,
+    // private PurchaseRequestSvc: PurchaseRequestService
+  ) { }
 
   ngOnInit() {
-    this.auth.logout();
+    this.auth.logout(); // why is this here?
     this.auth.reviewPrivileges.subscribe( rev => {
      console.log(rev);
      if (this.menuItem.display == 'Review') {
@@ -26,6 +31,9 @@ export class MenuItemComponent implements OnInit {
         this.menuItem.visible = adm;
       }
     });
+    // this.PurchaseRequestSvc.NeedsReviewList().subscribe( p => {
+    //   this.reviewBadgeCount = p.length;
+    // });
   }
 
 }

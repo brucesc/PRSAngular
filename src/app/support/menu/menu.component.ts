@@ -18,7 +18,7 @@ export class MenuComponent implements OnInit {
     new Menu('Products', 'products/list', 'The product list display'),
     new Menu('Purchase Requests', 'purchaserequests/list', 'The Purchase Request list display'),
     new Menu('Review', '/purchaserequests/needsreviewlist', 'Purchase Requests that need review'),
-    new Menu('Login', '/users/login', 'The user login display')
+    // new Menu('Login', '/users/login', 'The user login display')
   ];
 
   user: User;
