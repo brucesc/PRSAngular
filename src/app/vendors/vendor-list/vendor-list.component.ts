@@ -11,9 +11,9 @@ import { SortPipe } from '../../pipes/sort.pipe';
   styleUrls: ['./vendor-list.component.css']
 })
 export class VendorListComponent implements OnInit {
-  pagetitle: string = 'Vendor List';
+  pagetitle = 'Vendor List';
   vendors: Vendor[];
-  sortBy: string = 'Id';
+  sortBy = 'Id';
 
   constructor(private VendorSvc: VendorService) {}
 

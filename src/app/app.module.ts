@@ -93,7 +93,7 @@ import { SortPipe } from './pipes/sort.pipe';
     ReviewListComponent,
     ReviewItemComponent,
 
-    SortPipe
+    SortPipe,
   ],
   imports: [
     BrowserModule,
