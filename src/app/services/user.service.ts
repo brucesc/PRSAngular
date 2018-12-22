@@ -32,4 +32,11 @@ export class UserService {
   Login(username: string, password: string): Observable<any> {
     return this.http.get(url + 'Login/' + username + '/' + password) as Observable<any>;
   }
+
+  searchByUserName(term: string): Observable<any> {
+    if (!term) {
+      return Observable.of([]);
+  }
+    return this.http.get(url + 'SearchByName?name=' + term) as Observable<any>;
+  }
 }

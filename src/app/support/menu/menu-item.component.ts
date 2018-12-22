@@ -22,12 +22,12 @@ export class MenuItemComponent implements OnInit {
     this.auth.logout(); // why is this here?
     this.auth.reviewPrivileges.subscribe( rev => {
      console.log(rev);
-     if (this.menuItem.display == 'Review') {
+     if (this.menuItem.display === 'Review') {
       this.menuItem.visible = rev; }
     });
     this.auth.adminPrivileges.subscribe(adm => {
       console.log(adm);
-      if (this.menuItem.display == 'Users' || this.menuItem.display == 'Vendors' || this.menuItem.display == 'Products') {
+      if (this.menuItem.display === 'Users' || this.menuItem.display === 'Vendors' || this.menuItem.display === 'Products') {
         this.menuItem.visible = adm;
       }
     });
